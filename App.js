@@ -10,7 +10,8 @@ import WelcomeScreen2 from './screens/welcomeScreen2';
 import WelcomeScreen3 from './screens/welcomeScreen3';
 import WelcomeScreen4 from './screens/welcomeScreen4';
 import Home from './screens/home';
-import home1 from './screens/home1';
+import BotttomTab from './screens/bottomTab';
+import DrawerNavigation from './screens/Drawer';
 
 const Stack = createNativeStackNavigator();
 
@@ -49,11 +50,21 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator >
+        
+      {/* <Stack.Screen
+          startAsync={LoadFonts}
+          // name="splashScreen"
+          name="drawer"
+          component={DrawerNavigation}
+          options={{ headerShown: false }}
+          onLayout={onLayoutRootView}
+        /> */}
+
         <Stack.Screen
           startAsync={LoadFonts}
           // name="splashScreen"
-          name="home"
-          component={Home}
+          name="bottom"
+          component={BotttomTab}
           options={{ headerShown: false }}
           onLayout={onLayoutRootView}
         />
