@@ -2,7 +2,6 @@ import React from 'react';
 import { Image, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, View, ScrollView } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
@@ -122,10 +121,7 @@ const Home = ({navigation}) => {
                     </View>
 
                 </View>
-                <View style={styles.input}>
-                    <FontAwesome name="barcode" size={20} color="black" />
-                    <TextInput style={styles.inputText} placeholder='Enter Zip Code Here' ></TextInput>
-                </View>
+               
             </ScrollView>
 
         </View>
@@ -135,25 +131,17 @@ const Home = ({navigation}) => {
 const styles = StyleSheet.create({
     scrollView: {
         flex: 1,
+        position:"relative",
+        top:130
     },
     container: {
         flex: 1,
         justifyContent: 'space-between',
         paddingVertical: 5,
         // paddingBottom: 490,
+       
     },
 
-    container1: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        backgroundColor: 'black',
-        height: 140,
-        borderBottomLeftRadius: 55,
-        borderBottomRightRadius: 55,
-        paddingHorizontal: 30,
-        paddingTop: 50,
-    },
     container2: {
         backgroundColor: '#E8ECF4',
         flexDirection: 'row',
@@ -164,7 +152,7 @@ const styles = StyleSheet.create({
         paddingRight: 34,
         height: 180,
         // borderRadius: 10,
-        zIndex: -1,
+        zIndex: 0,
         borderBottomLeftRadius: 55,
         borderBottomRightRadius: 55,
     },
@@ -200,15 +188,6 @@ const styles = StyleSheet.create({
         borderColor: 'gray'
     },
 
-    innerContainer1: {
-        flexDirection: 'column',
-        // justifyContent: 'flex-start',
-        alignItems: 'center',
-        // marginTop: ,
-        paddingLeft: 50,
-        paddingHorizontal: 20,
-        marginBottom: 30
-    },
     innerContainer2: {
         flexDirection: 'column',
         // width:"80%",
@@ -231,23 +210,7 @@ const styles = StyleSheet.create({
         // paddingHorizontal: 20,
         // marginBottom:30
     },
-    text1: {
-        color: 'white',
-        fontSize: 12,
-        fontFamily: 'Gilroy',
-        marginTop: 9,
-    },
-    text2: {
-        color: 'white',
-        marginTop: 3,
-        fontSize: 19,
-        fontFamily: 'Gilroy-Bold',
-    },
-    text3: {
-        color: '#FFD401',
-        fontSize: 19,
-        fontFamily: 'Gilroy-Bold',
-    },
+    
     text4: {
         color: 'black',
         fontSize: 15,
@@ -309,21 +272,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Gilroy',
         marginBottom: 5
     },
-    input: {
-        borderColor: '#FFD401',
-        backgroundColor: 'white',
-        width: 170,
-        paddingVertical: 7,
-        borderRadius: 5,
-        borderWidth: 2.5,
-        position: 'relative',
-        top: 128,
-        left: 100,
-        zIndex: 1,
-        paddingHorizontal: 10,
-        flexDirection: "row",
-        alignItems: "center"
-    },
+  
     input1: {
         borderColor: '#E8ECF4',
         backgroundColor: 'white',
@@ -345,11 +294,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between"
     },
-    inputText: {
-        paddingLeft: 15,
-        fontSize: 12,
-        color: 'black',
-    },
+    
 
     inputText1: {
         width: 160,
@@ -380,10 +325,7 @@ const styles = StyleSheet.create({
         bottom: 0,
         right: 0,
     },
-    gap: {
-        // width: 20,
-        paddingLeft: 20
-    },
+    
 });
 
 export default Home;

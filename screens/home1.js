@@ -2,11 +2,13 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import Header from '../components/Header';
 
-const Home1 = ({ navigation }) => {
+const Home1 = () => {
   return (
     <View>
-      {/* <Header navigation={navigation} /> */}
-      <Text>Home1 Screen Content</Text>
+        {/* <Header /> */}
+        <Text>
+          Maaz
+        </Text>
     </View>
   );
 };

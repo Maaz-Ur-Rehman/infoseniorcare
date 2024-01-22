@@ -2,15 +2,15 @@ import React, { useEffect } from 'react';
 import { Image, Text, View, StyleSheet, ImageBackground } from 'react-native';
 
 export default function SplashScreens({navigation}) {
-  // useEffect(() => {
-  //   // Add a delay of 3 seconds before navigating to WelcomeScreen1
-  //   const timer = setTimeout(() => {
-  //     navigation.navigate('welcomeScreen1');
-  //   }, 3000);
+  useEffect(() => {
+    // Add a delay of 3 seconds before navigating to WelcomeScreen1
+    const timer = setTimeout(() => {
+      navigation.navigate('home');
+    }, 3000);
 
-  //   // Clear the timeout when the component unmounts
-  //   return () => clearTimeout(timer);
-  // }, [navigation]);
+    // Clear the timeout when the component unmounts
+    return () => clearTimeout(timer);
+  }, [navigation]);
   return (
     <ImageBackground
       source={require('./../assets/backgroundImage.png')}

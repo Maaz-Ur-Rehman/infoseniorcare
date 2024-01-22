@@ -6,7 +6,7 @@ const WelcomeScreen4 = ({navigation}) => {
   const goToNextScreen = () => {
     // Implement your navigation logic to the next screen
     // For example, you can use React Navigation's navigation.navigate
-    navigation.navigate('home'); // Replace 'NextScreen' with your actual screen name
+    navigation.navigate('home1'); // Replace 'NextScreen' with your actual screen name
   };
 
   return (
