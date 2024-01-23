@@ -10,8 +10,14 @@ const Header = () => {
     const navigation = useNavigation();
 
     const openDrawer = () => {
-        navigation.navigate('home5', { screen: 'home5'});
+        navigation.openDrawer();
     };
+    const goToNotificationScreen = () => {
+        navigation.navigate('NotificationScreen');
+    };
+    const goToStart=()=>{
+        navigation.navigate('start');
+    }
     return (
 
         <View style={styles.container1}>
@@ -25,9 +31,13 @@ const Header = () => {
                 <Text style={styles.text2}>Search By <Text style={styles.text3}>Zip Code</Text></Text>
 
             </View>
+            <TouchableOpacity onPress={goToStart}>
             <MaterialCommunityIcons name="login-variant" size={24} color="white" />
+            </TouchableOpacity>
             <View style={styles.gap} />
-            <MaterialIcons name="notifications-none" size={24} color="white" />
+            <TouchableOpacity onPress={goToNotificationScreen}>
+                <MaterialIcons name="notifications-none" size={24} color="white" />
+            </TouchableOpacity>
 
             <View style={styles.input}>
                 <FontAwesome name="barcode" size={20} color="black" />

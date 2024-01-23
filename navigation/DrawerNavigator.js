@@ -1,25 +1,27 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { createDrawerNavigator } from '@react-navigation/drawer'
-import Home4 from '../screens/Home4'
-import Home5 from '../screens/Home5'
-import BotttomTabNavigator from './BottomTabNavigator'
+import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import BotttomTabNavigator from './BottomTabNavigator';
+import CustomDrawerContent from '../components/customDrawerContent';
 
+const Drawer = createDrawerNavigator();
 
-
-const Drawer=createDrawerNavigator()
-function DrawerNavigator () {
+function DrawerNavigator() {
   return (
-  
-    <Drawer.Navigator>
-        <Drawer.Screen name="home" component={BotttomTabNavigator}></Drawer.Screen>
-        <Drawer.Screen name="home5" component={Home5}></Drawer.Screen>
-
+    <Drawer.Navigator
+    drawerContent={(props) => <CustomDrawerContent {...props} />}>
+    <Drawer.Screen 
+  name="home"
+  component={BotttomTabNavigator}
+  options={{
+   headerShown:false,
+    drawerItemStyle: {display: 'none'},
+  }}
+/>
     </Drawer.Navigator>
-
-  )
+  );
 }
 
-export default DrawerNavigator
+export default DrawerNavigator;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

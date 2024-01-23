@@ -3,9 +3,13 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+// import { FontAwesome } from '@expo/vector-icons';
+import { Fontisto } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 // import Home from './home';
-import { FontAwesome } from '@expo/vector-icons';
 
 import Home1 from '../screens/home1';
 import Home2 from '../screens/home2';
@@ -42,17 +46,30 @@ const BotttomTabNavigator = () => {
         name="home"
         component={Home}
         options={{
-          tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ focused }) => (
+            <View style={{
+              alignItems: 'center', // Center the icons horizontally
+            }}>
+
             <View
               style={{
-                backgroundColor: focused ? 'white' : 'black',
-                padding: 10,
+                paddingBottom: focused ? 8 : 0,
                 borderRadius: 200,
               }}
-            >
-              <FontAwesome name="search" color={color} size={24} />
+              >
+              <AntDesign
+                name="home"
+                size={24}
+                color={focused ? "rgba(255, 212, 1, 1)" : "#fff"}
+              />
             </View>
+            {focused && (
+                <View style={{ backgroundColor: "rgba(255, 212, 1, 1)", height: 5, width:5,borderRadius:10 }}></View>
+
+              )}
+          </View>
           ),
+          
           // tabBarOptions: {
           //   activeTintColor: 'white',
           //   inactiveTintColor: 'white',
@@ -65,15 +82,26 @@ const BotttomTabNavigator = () => {
         name="home1"
         component={Home1}
         options={{
-          tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ focused }) => (
+            <View  style={{
+              alignItems: 'center', // Center the icons horizontally
+            }}>
             <View
               style={{
-                backgroundColor: focused ? 'white' : 'black',
-                padding: 10,
+                paddingBottom: focused ? 8 : 0,
                 borderRadius: 200,
               }}
             >
-              <FontAwesome name="search" color={color} size={24} />
+              <FontAwesome
+                name="search"
+                size={24}
+                color={focused ? "rgba(255, 212, 1, 1)" : "#fff"}
+              />
+            </View>
+            {focused && (
+                <View style={{ backgroundColor: "rgba(255, 212, 1, 1)", height: 5, width:5,borderRadius:10 }}></View>
+
+              )}
             </View>
           ),
           // tabBarOptions: {
@@ -88,15 +116,28 @@ const BotttomTabNavigator = () => {
         name="home2"
         component={Home2}
         options={{
-          tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ focused }) => (
             <View
               style={{
-                backgroundColor: focused ? 'white' : 'black',
-                padding: 10,
-                borderRadius: 200,
+                alignItems: 'center', // Center the icons horizontally
               }}
             >
-              <FontAwesome name="home" color={color} size={24} />
+              <View
+                style={{
+                  paddingBottom: focused ? 8 : 0,
+                  borderRadius: 200,
+                }}
+              >
+                <Fontisto
+                  name="favorite"
+                  size={24}
+                  color={focused ? "rgba(255, 212, 1, 1)" : "#fff"}
+                />
+              </View>
+              {focused && (
+                <View style={{ backgroundColor: "rgba(255, 212, 1, 1)", height: 5, width:5,borderRadius:10 }}></View>
+
+              )}
             </View>
           ),
           // tabBarOptions: {
@@ -111,15 +152,23 @@ const BotttomTabNavigator = () => {
         name="home3"
         component={Home3}
         options={{
-          tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ focused }) => (
+            <View  style={{
+              alignItems: 'center', // Center the icons horizontally
+            }} >
             <View
               style={{
-                backgroundColor: focused ? 'white' : 'black',
-                padding: 10,
+                paddingBottom: focused ? 8: 0,
                 borderRadius: 200,
               }}
             >
-              <FontAwesome name="home" color={color} size={24} />
+             
+              <Entypo name="location" size={24} color={focused ? "rgba(255, 212, 1, 1)" : "#fff"} />
+            </View>
+            {focused && (
+                <View style={{ backgroundColor: "rgba(255, 212, 1, 1)", height: 5, width:5,borderRadius:10 }}></View>
+
+              )}
             </View>
           ),
           // tabBarOptions: {
