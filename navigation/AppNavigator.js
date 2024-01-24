@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screens/home';
@@ -12,10 +12,11 @@ import DrawerNavigator from './DrawerNavigator';
 import BotttomTabNavigator from './BottomTabNavigator';
 import NotificationScreen from '../screens/NotificationScreen';
 import Start from '../screens/Start';
+import Login from '../screens/Login';
 const Stack = createStackNavigator();
 const AppNavigator = () => {
     return (
-        <Stack.Navigator  >
+        <Stack.Navigator>
             <Stack.Screen
                 name="splashScreen"
                 component={SplashScreens}
@@ -38,30 +39,40 @@ const AppNavigator = () => {
             <Stack.Screen
                 name="start"
                 component={Start}
-                // options={{ headerShown: false }}
-            // onLayout={onLayoutRootView}
+                options={{
+                    title: '',
+                }}
+            />
+            <Stack.Screen
+                name="login"
+                component={Login}
+                options={{
+                    headerShown:false
+                }}
+                
             />
 
+
             <Stack.Screen
-                    name="welcomeScreen1"
-                    component={WelcomeScreen1}
-                    options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                    name="welcomeScreen2"
-                    component={WelcomeScreen2}
-                    options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                    name="welcomeScreen3"
-                    component={WelcomeScreen3}
-                    options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                    name="welcomeScreen4"
-                    component={WelcomeScreen4}
-                    options={{ headerShown: true }}
-                />
+                name="welcomeScreen1"
+                component={WelcomeScreen1}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="welcomeScreen2"
+                component={WelcomeScreen2}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="welcomeScreen3"
+                component={WelcomeScreen3}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="welcomeScreen4"
+                component={WelcomeScreen4}
+                options={{ headerShown: true }}
+            />
 
         </Stack.Navigator>
     )

@@ -2,11 +2,20 @@ import React from 'react';
 import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import CustomDrawerFooter from '../components/CustomDrawerFooter';
-import SvgUri from 'react-native-svg';
-const Start = () => {
+import { Ionicons } from '@expo/vector-icons';
+// import SvgUri from 'react-native-svg';
+const Start = ({navigation}) => {
+//  const BackScreen =()=>{
+//   console.log(props,"props")
+//  }
   return (
     <SafeAreaView style={styles.mainContainer}>
+ 
         <View style={styles.container}>
+        {/* <TouchableOpacity style={styles.icon} onPress={BackScreen}> */}
+        {/* <Ionicons name="chevron-back-outline" size={24} color="black" style={styles.backButton} /> */}
+            
+        {/* </TouchableOpacity> */}
         <View>
         {/* <SvgUri
             style={styles.logo}
@@ -20,7 +29,7 @@ const Start = () => {
         <View style={styles.box}>
          <Text style={styles.text11}>Login As</Text>
           <Text style={styles.text12}>Admin</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>{navigation.navigate("login")}}>
             <FontAwesome5 name="arrow-circle-right" size={24} color="#0470BA" />
           </TouchableOpacity>
           <Image source={require('./../assets/images/admin.png')} style={styles.image} />
@@ -28,7 +37,7 @@ const Start = () => {
         <View style={styles.box}>
         <Text style={styles.text11}>Login As</Text>
           <Text style={styles.text12}>Patient</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>{navigation.navigate("login")}}>
             <FontAwesome5 name="arrow-circle-right" size={24} color="#0470BA" />
           </TouchableOpacity>
           <Image source={require('./../assets/images/patient.png')} style={styles.image} />
@@ -36,7 +45,7 @@ const Start = () => {
         <View style={styles.box}>
         <Text style={styles.text11}>Login As</Text>
           <Text style={styles.text12}>Facility</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>{navigation.navigate("login")}}>
             <FontAwesome5 name="arrow-circle-right" size={24} color="#0470BA" />
           </TouchableOpacity>
           <Image source={require('./../assets/images/facility.png')} style={styles.image} />
@@ -44,7 +53,7 @@ const Start = () => {
         <View style={styles.box}>
         <Text style={styles.text11}>Login As</Text>
           <Text style={styles.text12}>Facility</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>{navigation.navigate("login")}}>
             <FontAwesome5 name="arrow-circle-right" size={24} color="#0470BA" />
           </TouchableOpacity>
           <Image source={require('./../assets/images/professional.png')} style={styles.image} />
@@ -68,7 +77,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingVertical: 20,
-        marginTop:40,
+        marginTop:50,
       
       },
   innercontainer: {
@@ -77,7 +86,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     justifyContent: 'space-around',
     marginTop:40,
-    marginBottom:-160
+    marginBottom:-140
   },
   box: {
     width: '46%',
@@ -89,19 +98,19 @@ const styles = StyleSheet.create({
     borderColor: '#A2A2A2',
     backgroundColor: '#F3F3F3',
     
-    borderRadius: 10,
-    borderBottom:-80
+    borderRadius: 5,
+    borderBottom:-150
   },
   text11: {
     color: '#0470BA',
-    marginTop: 20,
+    marginTop: 25,
     fontSize: 16,
     fontFamily: 'Gilroy-Bold',
     marginBottom: 2,
   },
   logo:{
-    width:220,
-    height:42
+    width:205,
+    height:39
 
   },
 
@@ -117,6 +126,23 @@ const styles = StyleSheet.create({
     position:"absolute",
     bottom:0,
     right:0
+  },
+  backButton:{
+    padding:5,
+    width:40,
+    height:40,
+    position:"relative",
+    top:-40,
+    right:140,
+    color:"white",
+    backgroundColor:"#0470BA",
+    width:40,
+    height:40,
+    borderRadius:10
+  },
+  icon:{
+    // padding:5
+    
   }
 
 });
