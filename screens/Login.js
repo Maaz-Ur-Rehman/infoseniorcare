@@ -54,7 +54,7 @@ const Login = () => {
           <View style={styles.container}>
             <View style={{paddingHorizontal:8}}>
               <Image
-                source={require("../assets/images/image16.png")}
+                 source={require("../assets/images/image16.png")}
                 style={{ width:  224.308, height: 43, alignSelf: "center" }}
               />
             </View>
